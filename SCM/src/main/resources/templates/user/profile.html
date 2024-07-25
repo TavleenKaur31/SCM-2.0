@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(~{::section},~{::title})">
+	<head>
+		<title data-th-text="${loggedinUser.name}">profile page</title>
+		
+	</head>
+	<body>
+		<section style="height: 700px;" class="sm:pl-64 pt-20">
+			
+	<div th:if="${loggedinUser}">
+		<div data-th-replace="~{user/sidebar::sidebar}"></div>
+		
+	
+ 
+
+
+
+
+<div class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">
+        
+        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Profile</h1>
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       <div
+          class="flex justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600" data-th-each="c: ${loggedinUser}"
+            data-th-object="${c}"
+        >
+          <div class=""></div>
+          <div class="p-5 flex flex-col justify-center items-center space-y-2">
+            <img
+              onerror="this.src='https://static-00.iconduck.com/assets.00/profile-default-icon-2048x2045-u3j7s5nj.png'"
+              id="contact_image"
+              class="w-32 h-32 rounded-full"
+             data-th-src="@{*{profilePic}}"
+              alt=""
+            />
+              <h5 class="mb-1 text-3xl font-medium text-gray-900 dark:text-white" data-th-text="*{name}">Bonnie Green</h5>
+        <span class="text-xl pt-2 text-gray-500 dark:text-gray-400" data-th-text="*{about}">Visual Designer</span>
+       
+
+          </div>
+
+          
+            
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+              />
+          
+            <span class="sr-only">Close modal</span>
+          </button>
+        </div>
+        <div class="p-4 md:p-5 space-y-4">
+          <!--  other contact information  -->
+
+          <div class="relative overflow-x-auto">
+            <table
+              class="w-full text-sm text-center rtl:text-right text-gray-500 dark:text-gray-400" data-th-each="c: ${loggedinUser}"
+            data-th-object="${c}"
+            >
+             <tbody>
+                <tr
+                  class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                >
+                  <th
+                    scope="row"
+                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  >
+                 <i class="fa-solid fa-at"></i>
+                  </th>
+                  <td class="px-6 py-4">
+                    <span data-th-text="*{email}"
+                      >Vishesh Khand gomti nagar lucknow</span
+                    >
+                  </td>
+                </tr>
+
+                <tr
+                  class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                >
+                  <th
+                    scope="row"
+                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  >
+                   <i class="fa-solid fa-phone"></i>
+                  </th>
+                  <td class="px-6 py-4">
+                    <span data-th-text="*{phoneNumber}"
+                      >Logged in By Google/Github</span
+                    >
+                  </td>
+                </tr>
+               
+                <tr
+                  class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                >
+                  <th
+                    scope="row"
+                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  >
+                    <i class="fa-solid fa-earth-americas w-6 h-6"></i>
+                  </th>
+                  <td class="px-6 py-4">
+                    <a id="contact_website" data-th-text="*{provider}">www.learncodewithdurgesh.com</a>
+                  </td>
+                </tr>
+                
+              </tbody>
+
+            </table>
+          </div>
+        </div>
+       
+       
+       
+       
+       
+        
+    </div>
+    <div class="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0"></div>
+</div>
+
+	
+	
+	
+	
+	
+	
+	
+</div>
+			</section>
+	
+		
+		
+		
+	
+	</body>
+</html>
